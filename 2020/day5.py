@@ -1,6 +1,15 @@
+def passToBinary(boardingPass):
+    boardingPass = boardingPass.strip()
+    boardingPass = boardingPass.replace("L", "0")
+    boardingPass = boardingPass.replace("F", "0")
+    boardingPass = boardingPass.replace("R", "1")
+    boardingPass = boardingPass.replace("B", "1")
+    return boardingPass
+
+
 with open("files/day5.txt") as file:
-    passes = [i.strip().replace("L", "0").replace("F", "0").replace("R", "1")
-              .replace("B", "1")for i in file.readlines()]
+    passes = [passToBinary(i)for i in file.readlines()]
+
 
 maxseatId = []
 for i in passes:
@@ -10,12 +19,12 @@ for i in passes:
     maxseatId.append(seatId)
     # print(row, column, seatId)
 
-print("Part 1: ", end=" ")
-print(max(maxseatId))
-print("Part 2: ", end=" ")
-print([i for i in range(min(maxseatId), max(maxseatId))
-      if i not in maxseatId][0])
+part1 = max(maxseatId)
+part2 = [i for i in range(min(maxseatId), max(maxseatId))
+         if i not in maxseatId][0]
 
+print("Part 1: ", part1)
+print("Part 2: ", part2)
 
 # maxseatId = 0
 # for i in passes:
