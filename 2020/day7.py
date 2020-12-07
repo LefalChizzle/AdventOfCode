@@ -34,12 +34,12 @@ def helpMe(whatImLookingFor):
 
 # part2
 def damnIwantedToUseRegex(start):
-    contains = sum(rules.get(start)[1])
-    for i in range(len(rules.get(start)[0])):
-        if rules.get(start)[0][i] == "noother":
+    rgs = rules.get(start)
+    contains = sum(rgs[1])
+    for i in range(len(rgs[0])):
+        if rgs[0][i] == "noother":
             return 0
-        contains += rules.get(start)[1][i] * \
-            damnIwantedToUseRegex(rules.get(start)[0][i])
+        contains += rgs[1][i] * damnIwantedToUseRegex(rgs[0][i])
     return contains
 
 
@@ -48,3 +48,14 @@ helpMe("shinygold")
 # print(hasShinyGold)
 print(len(hasShinyGold))
 print(damnIwantedToUseRegex("shinygold"))
+
+
+# some more for fun
+temp = []
+temp2 = []
+for i in rules:
+    temp.append(i)
+    temp2.append(damnIwantedToUseRegex(i))
+from numpy import argmax, argmin
+print(f"there are {max(temp2)} bags in {temp[argmax(temp2)]}")
+print(f"there are {min(temp2)} bags in {temp[argmin(temp2)]}")
