@@ -23,8 +23,8 @@ part1 = max(maxseatId)
 part2 = [i for i in range(min(maxseatId), max(maxseatId))
          if i not in maxseatId][0]
 
-print("Part 1: ", part1)
-print("Part 2: ", part2)
+print("part 1: ", part1)
+print("part 2: ", part2)
 
 # maxseatId = 0
 # for i in passes:

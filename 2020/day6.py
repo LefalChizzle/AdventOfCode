@@ -18,6 +18,6 @@ for i in range(len(groups)):
 # print("1:", ansPart1)
 # print("2:", ansPart2)
 yesCount = [len(i) for i in ansPart1]
-print(sum(yesCount))
-print(sum(ansPart2))
+print("part1:", sum(yesCount))
+print("part2:", sum(ansPart2))
 # print(ansPart2[7], len(groups[7]))

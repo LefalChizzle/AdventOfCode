@@ -46,8 +46,8 @@ def damnIwantedToUseRegex(start):
 hasShinyGold = []
 helpMe("shinygold")
 # print(hasShinyGold)
-print(len(hasShinyGold))
-print(damnIwantedToUseRegex("shinygold"))
+print("part1:", len(hasShinyGold))
+print("part2:", damnIwantedToUseRegex("shinygold"))
 
 
 # some more for fun

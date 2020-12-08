@@ -25,4 +25,6 @@ for slope in slopelist:
 
     countlist.append(count)
 # print(trees)
-print(countlist, prod(countlist))
+
+print("part1:", countlist[1])
+print("part2:", " * ".join(map(str, countlist)), "=", prod(countlist))

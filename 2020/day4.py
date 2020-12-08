@@ -7,8 +7,7 @@ with open("files/day4.txt") as file:
 p1count = 0
 p2count = 0
 for i in passports:
-    # count += 1 if len(i) == (8 if "cin" in i.keys() else 7) else 0
-    print(i)
+    # print(i)
     if ("byr" in i.keys() and "iyr" in i.keys() and "eyr" in i.keys() and "hgt"
             in i.keys() and "hcl" in i.keys() and "ecl" in i.keys() and "pid"
             in i.keys()):
@@ -21,10 +20,10 @@ for i in passports:
 
         valid[2] = int(i.get("eyr")) >= 2020 and 2030 >= int(i.get("eyr"))
 
-        # if i.get("hgt")[-2] == "c": valid[3] = int(i.get("hgt")[:-2]) >= 150
-        # and 193 >= int(i.get("hgt")[:-2])
-        # elif i.get("hgt")[-2] == "i": valid[3] = int(i.get("hgt")[:-2]) >=\
-        # 59 and 76 >= int(i.get("hgt")[:-2])
+        # *if i.get("hgt")[-2] == "c": valid[3] = int(i.get("hgt")[:-2]) >= 150
+        # *and 193 >= int(i.get("hgt")[:-2])
+        # *elif i.get("hgt")[-2] == "i": valid[3] = int(i.get("hgt")[:-2]) >=\
+        # *59 and 76 >= int(i.get("hgt")[:-2])
 
         valid[3] = (int(i.get("hgt")[:-2]) >= 150 and
                     193 >= int(i.get("hgt")[:-2]) if i.get("hgt")[-2] == "c"
@@ -41,9 +40,10 @@ for i in passports:
 
         valid[6] = len(i.get("pid")) == 9
 
-        print(valid)
+        # print(valid)
 
         p1count += 1
         p2count += 1 if False not in valid else 0
 
-print(p1count, p2count)
+print("part1:", p1count)
+print("part2:", p2count)

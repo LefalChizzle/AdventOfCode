@@ -11,7 +11,7 @@ for i in passwords:
         truecount += 1
     # print(i, truecount)
 
-print(truecount)
+print("part1:", truecount)
 
 
 # part2
@@ -22,4 +22,4 @@ for i in passwords:
         truecount += 1
     # print(i, truecount)
 
-print(truecount)
+print("part2:", truecount)
