@@ -2,7 +2,7 @@ from copy import copy
 with open('files/day9.txt') as file:
     codes = [int(i.strip()) for i in file.readlines()]
 
-print(codes)
+# print(codes)
 master = copy(codes)
 
 preamble = []
@@ -25,8 +25,8 @@ while invalid == 0:
 
     if codes[0] not in twoSums:
         invalid = codes[0]
-        print(invalid, "is not valid!")
-
+        # print(invalid, "is not valid!")
+        print(f"part1: {invalid}")
     if len(codes) > 1:
         preamble.pop(0)
         preamble.append(codes.pop(0))
@@ -41,4 +41,5 @@ for i in range(len(master)):
         if total == invalid:
             minimum = sorted(master[i:j])[0]
             maximum = sorted(master[i:j])[-1]
-            print(i, j, minimum, maximum, minimum + maximum)
+            print(f'part2: {minimum + maximum}')
+            exit()
