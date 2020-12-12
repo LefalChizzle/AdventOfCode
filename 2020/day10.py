@@ -8,14 +8,14 @@ phoneJoltage = max(AdapterJolts) + 3
 
 # *part1
 prevJolt = 0
-diffCount = [0, 0, 0, 1]
+joltDiff = [0, 0, 0, 1]
 for i in AdapterJolts:
     # print(i, prevJolt)
-    diffCount[i - prevJolt] += 1
+    joltDiff[i - prevJolt] += 1
     prevJolt = i
 
-# print(diffCount[1:])
-print(f"part1: {diffCount[1] * diffCount[3]}")
+# print(joltDiff[1:])
+print(f"part1: {joltDiff[1] * joltDiff[3]}")
 
 
 # !Garbage from unsuccessful attempts at part2
@@ -69,21 +69,23 @@ longestJolt = [0] + AdapterJolts + [phoneJoltage]
 
 # *part2 but it actually works
 buffer = [-6, -3, 0] + AdapterJolts
-runningTotal = [1, 1, 1]
+joltTotal = [1, 1, 1]
 for i in range(3, len(AdapterJolts)):
-    nextJoltage = runningTotal[i - 1]
+    nextJoltage = joltTotal[i - 1]
     # print(f"nextJoltage {nextJoltage}")
 
     for j in [2, 3]:
 
         if buffer[i] - buffer[i - j] <= 3:
-            nextJoltage += runningTotal[i - j]
+            nextJoltage += joltTotal[i - j]
             # print(nextJoltage)
 
-    runningTotal.append(nextJoltage)
-    # print(f"arr {runningTotal}")
+    joltTotal.append(nextJoltage)
+    # print(f"arr {joltTotal}")
 
-# print(runningTotal)
-print(f"part2: {runningTotal[-1]}")
+# print(joltTotal)
+print(f"part2: {joltTotal[-1]}")
 
+print(max(AdapterJolts))
+input()
 # print(len(AdapterJolts))

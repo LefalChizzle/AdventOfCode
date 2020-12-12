@@ -1,3 +1,4 @@
+from numpy import argmax, argmin
 with open('files/day7.txt') as file:
     rules = {}
 
@@ -56,6 +57,5 @@ temp2 = []
 for i in rules:
     temp.append(i)
     temp2.append(damnIwantedToUseRegex(i))
-from numpy import argmax, argmin
 print(f"there are {max(temp2)} bags in {temp[argmax(temp2)]}")
 print(f"there are {min(temp2)} bags in {temp[argmin(temp2)]}")
