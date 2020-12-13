@@ -1,3 +1,5 @@
+import time
+start_time = time.time()
 with open('files/day12.txt') as file:
     directions = [i.strip() for i in file.readlines()]
 
@@ -59,7 +61,8 @@ for i in directions:
         elif dir == "south":
             vert -= int(i[1:])
 
-print(vert, hori, dir)
+# print(vert, hori, dir)
+print(f"part1: {abs(vert) + abs(hori)}")
 
 
 wayVert = 1
@@ -105,4 +108,7 @@ for i in directions:
     elif i[0] == "F":
         shipVert += int(i[1:]) * wayVert
         shipHori += int(i[1:]) * wayHori
-    print(wayHori, wayVert, shipHori, shipVert, shipHori + shipVert)
+# print(wayHori, wayVert, shipHori, shipVert, shipHori + shipVert)
+print(f"part2: {abs(shipHori) + abs(shipVert)}")
+end_time = time.time()
+print(end_time-start_time)
