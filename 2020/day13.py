@@ -1,6 +1,7 @@
 import time
 from math import prod
-with open('files/test.txt') as file:
+
+with open('files/day13.txt') as file:
     timestamp = int(file.readline().strip())
     busIDswithX = file.readline().strip().split(',')
 
@@ -21,22 +22,21 @@ while flag:
     count += 1
 
 print(f"part1: {(waittime - timestamp) * bus}")
-
 # flag = True
 # while flag:
 #     for i in range(len(busIDswithX)):
 #         if busIDswithX[i] == 'x':
 #             continue
 #         elif (i+timestamp % int(busIDswithX[i])) == 0:
-#             flag = False
-#         else:
 #             flag = True
+#         else:
+#             flag = False
 #     print(timestamp)
 #     timestamp += 1
 # print(timestamp)
 
 # part2
-startTime = time.time()
+# ? startTime = time.time()
 deltaTimes = [[i, int(j)] for i, j in enumerate(busIDswithX) if j != "x"]
 offset = deltaTimes[0][0] + deltaTimes[0][1]
 completed = 1
@@ -50,8 +50,8 @@ while completed < len(deltaTimes):
         increment = prod([i[1] for i in deltaTimes[:completed]])
         if completed == len(deltaTimes):
             print(f"part2: {offset}")
-            endTime = time.time()
+            # ? endTime = time.time()
 
     offset += increment
 
-print(f"start: {startTime}\nend: {endTime}\ntimetaken: {endTime-startTime}")
+# ?print(f"start: {startTime}\nend: {endTime}\ntimetaken: {endTime-startTime}")

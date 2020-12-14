@@ -1,7 +1,8 @@
 import time
-start_time = time.time()
-with open('files/day12.txt') as file:
+with open('files/bigboy12.txt') as file:
     directions = [i.strip() for i in file.readlines()]
+
+start_time = time.time()
 
 # print(directions)
 vert = 0
@@ -64,6 +65,7 @@ for i in directions:
 # print(vert, hori, dir)
 print(f"part1: {abs(vert) + abs(hori)}")
 
+mid_time = time.time()
 
 wayVert = 1
 wayHori = 10
@@ -111,4 +113,8 @@ for i in directions:
 # print(wayHori, wayVert, shipHori, shipVert, shipHori + shipVert)
 print(f"part2: {abs(shipHori) + abs(shipVert)}")
 end_time = time.time()
-print(end_time-start_time)
+
+
+print(f"p1 time: {mid_time-start_time}")
+print(f"p2 time: {end_time-mid_time}")
+print(f"total time: {end_time-start_time}")
