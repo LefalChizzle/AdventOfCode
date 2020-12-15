@@ -1,6 +1,6 @@
 with open("files/day4.txt") as file:
     passports = [eval("{'"+i.strip().replace("\n", " ").replace(" ", "', '")
-                 .replace(":", "':'")+"'}")
+                      .replace(":", "':'")+"'}")
                  for i in file.read().split("\n\n")]
     # print(passports)
 
@@ -33,7 +33,7 @@ for i in passports:
 
         valid[4] = (i.get("hcl")[0] == "#" and
                     False not in [i in "0123456789abcdef" for i in
-                    list(i.get("hcl")[1:])])
+                                  list(i.get("hcl")[1:])])
 
         valid[5] = (i.get("ecl") in
                     ["amb", "blu", "brn", "gry", "grn", "hzl", "oth"])

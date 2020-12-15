@@ -60,7 +60,8 @@ for i, j in instructions:
         # print(i, new, memory)
         memoryp1.update({i: str(new)})
 
-        # newMem = i[0:3] str(int(applyMask(memoryp2.get('mask'), i[4:-1]), base=2))
+        # newMem = i[0:3] str(int(applyMask(memoryp2.get('mask'), i[4:-1]),
+        # base=2))
         print(p2applyMask(memoryp2.get('mask'), i[4:-1]))
         # memoryp2.update({newMem: j})
 
