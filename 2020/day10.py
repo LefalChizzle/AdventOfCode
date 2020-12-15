@@ -87,5 +87,5 @@ for i in range(3, len(AdapterJolts)):
 print(f"part2: {joltTotal[-1]}")
 
 print(max(AdapterJolts))
-input()
+# input()
 # print(len(AdapterJolts))
