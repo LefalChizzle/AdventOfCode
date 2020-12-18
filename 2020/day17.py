@@ -23,20 +23,20 @@ def griddyboi(d):
     # print(state)
 
     for i in range(6):
-        state = set(pos for pos, cnt in Counter(
-            tuple(map(sum, zip(pos, n)))
-            for pos in state for n in coords).items()
-            if cnt == 3 or pos in state and cnt == 2)
+        state = set(pos for pos, cnt
+                    in Counter(tuple(map(sum, zip(pos, n)))
+                               for pos in state for n in coords).items()
+                    if cnt == 3 or pos in state and cnt == 2)
 
     return(len(state))
 
 
-for i in range(3, 5):
-    x = time()
-    y = griddyboi(i)
-    z = time()
-    print(f"part{i-2}: {y}, in {z-x}")
-
+# for i in range(3, 6):
+#     x = time()
+#     y = griddyboi(i)
+#     z = time()
+#     print(f"part{i-2}: {y}, in {z-x}")
+print(griddyboi(6))
 
 # for i in range(11):
 #     x = time()
