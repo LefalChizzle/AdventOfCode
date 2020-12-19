@@ -3,13 +3,13 @@ import re
 
 def recursion(question):
     # print(question)
-    rejects = re.search("(\((\d+)(([+*])(\d+))+\))", question)
+    rejects = re.search(r"(\((\d+)(([+*])(\d+))+\))", question)
     if rejects is not None:
         return recursion(
             question.replace(rejects.groups()[0],
                              str(recursion(rejects.groups()[0][1:-1])), 1))
 
-    rejects = re.match("(\d+)([+*])(\d+)", question)
+    rejects = re.search(r"(\d+)([+*])(\d+)", question)
     if rejects is not None:
         x = rejects.groups()[0]
         op = rejects.groups()[1]
@@ -23,21 +23,21 @@ def recursion(question):
 
 
 def regex(question):
-    print(question)
-    rejects = re.search("(\((\d+)(([+*])(\d+))+\))", question)
+    # print(question)
+    rejects = re.search(r"(\((\d+)(([+*])(\d+))+\))", question)
     if rejects is not None:
         return regex(
             question.replace(rejects.groups()[0],
                              str(regex(rejects.groups()[0][1:-1])), 1))
 
-    rejects = re.search("(\d+)\+(\d+)", question)
+    rejects = re.search(r"(\d+)\+(\d+)", question)
     if rejects is not None:
         return regex(
             question.replace(rejects.group(),
                              str(int(rejects.groups()[0])
                                  + int(rejects.groups()[1])), 1))
 
-    rejects = re.match("(\d+)\*(\d+)", question)
+    rejects = re.search(r"(\d+)\*(\d+)", question)
     if rejects is not None:
         return regex(
             question.replace(rejects.group(),
