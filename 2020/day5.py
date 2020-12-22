@@ -35,3 +35,5 @@ print("part 2: ", part2)
 #         maxseatId = seatId
 #     print(row, column, seatId)
 # print(maxseatId)
+
+# TODO can process as a single birnary number, dont need to consider columns separately

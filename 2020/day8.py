@@ -54,3 +54,5 @@ for i in range(len(instructions)):
 
     if flag:
         instructions[i][0] = previnst
+
+# TODO python parses +1 and -1 as ints (because they are duh)

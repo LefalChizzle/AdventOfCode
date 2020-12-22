@@ -17,3 +17,6 @@ for i in expenses:
                 part2 = i * j * k
 
 print("part2:", part2)
+
+
+# TODO redo for i<j<k

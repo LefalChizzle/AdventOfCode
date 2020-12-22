@@ -7,7 +7,7 @@ with open('files/day16.txt') as file:
               for i in readin[2].split("\n")[1:]]
 
 
-print(valid)
+# print(valid)
 for i in range(len(valid)):
     valid[i] = valid[i][valid[i].index(": ")+1:]
     valid[i] = (int(valid[i][:valid[i].index("-")]),
@@ -34,7 +34,7 @@ def singleis_valid(word, tick) -> bool:
     return False
 
 
-print(nearby)
+# print(nearby)
 scan_error = []
 torem = []
 for i in range(len(nearby)):
@@ -45,19 +45,20 @@ for i in range(len(nearby)):
 
 validnearby = [nearby[i] for i in range(len(nearby)) if i not in torem]
 
-print(sum(scan_error))
+print(f"part1: {sum(scan_error)}")
 
-print(validnearby)
+# print(validnearby)
 
 wordorder = {}
 for i in range(len(valid)):
     temp = []
     for columncouldbe in range(len(valid)):
-        if all([singleis_valid(columncouldbe, ticket[i])for ticket in validnearby]):
+        if all([singleis_valid(columncouldbe, ticket[i])
+                for ticket in validnearby]):
             temp.append(columncouldbe)
     wordorder[i] = temp
 
-print(wordorder)
+# print(wordorder)
 # print(len(valid))
 
 
@@ -90,7 +91,6 @@ while ffs(wordorder):
 # print(valid)
 # print(myticket)
 # print(nearby)
-print(wordorder)
-
-print(myticket)
-print([myticket[wordorder[i][0]] for i in range(6)])
+# print(wordorder)
+# print(myticket)
+print("part2:", x := [myticket[wordorder[i][0]] for i in range(6)], prod(x))
