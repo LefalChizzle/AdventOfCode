@@ -19,9 +19,11 @@ funcs = {
 
 def tim(question):
     print(question)
+
     rejects = re.search(r"(\((\d+)((.)(\d+))+\))", question)
     if rejects is not None:
         return tim(question.replace(rejects.groups()[0], str(tim(rejects.groups()[0][1:-1])), 1))
+
     for priority in order:
         rejects = re.search(ops[priority], question)
         if rejects is not None:

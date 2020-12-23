@@ -20,3 +20,5 @@ print("part2:", part2)
 
 
 # TODO redo for i<j<k
+
+named

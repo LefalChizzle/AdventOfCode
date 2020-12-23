@@ -27,13 +27,10 @@ deck_one = [int(i) for i in inp[0].split(":\n")[1].split()]
 deck_two = [int(i) for i in inp[1].split(":\n")[1].split()]
 
 
-def recursive_play(deck1, deck2):
+def recursive_play(deck1: list, deck2: list) -> (int, list):
     seen = set()
     while deck1 and deck2:
-        # Checking to see if instant win occurs
-        # this is defintely balanced
         current_state = (tuple(deck1), tuple(deck2))
-        # list are unhashable apparently
         if current_state in seen:
             return 1, deck1
         seen.add(current_state)
