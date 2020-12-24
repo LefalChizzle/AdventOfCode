@@ -1,5 +1,4 @@
 import re
-# with open('test.txt') as file:
 with open('files/day7.txt') as file:
     ips = [i.strip() for i in file.readlines()]
 
@@ -12,9 +11,6 @@ def has_ABBA(word: str) -> bool:
         return False
 
 
-# print(has_ABBA("aaaa"))
-
-# print(ips)
 valid = 0
 ssl = 0
 for i in ips:
@@ -39,8 +35,8 @@ print(f"part2: {ssl}")
 
 
 # Super concise version
-def abba(x: str) -> bool: return any(a == d and b == c and a !=
-                                     b for a, b, c, d in zip(x, x[1:], x[2:], x[3:]))
+def abba(x: str) -> bool:
+    return any(a == d and b == c and a != b for a, b, c, d in zip(x, x[1:], x[2:], x[3:]))
 
 
 lines = [re.split(r'\[([^\]]+)\]', line.strip())
