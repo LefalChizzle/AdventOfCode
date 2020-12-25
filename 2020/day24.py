@@ -51,26 +51,26 @@ def get_all_neighbours(cell: complex) -> set:
     return neighbours
 
 
-black = flipped
+alive = flipped
 for i in range(100):
-    newblack = set()
-    newwhite = set()
+    newalive = set()
+    newdead = set()
 
     floor = set()
-    for tile in black:
+    for tile in alive:
         floor.add(tile)
         floor.update(get_all_neighbours(tile))
 
     for tile in floor:
-        adj_black = len(black.intersection(get_all_neighbours(tile)))
+        adj_alive = len(alive.intersection(get_all_neighbours(tile)))
 
-        if tile not in black and adj_black == 2:
-            newblack.add(tile)
-        elif tile in black and (adj_black == 0 or adj_black > 2):
-            newwhite.add(tile)
+        if tile not in alive and adj_alive == 2:
+            newalive.add(tile)
+        elif tile in alive and (adj_alive == 0 or adj_alive > 2):
+            newdead.add(tile)
 
-    black.difference_update(newwhite)
-    black.update(newblack)
-    # print(len(black))
+    alive.difference_update(newdead)
+    alive.update(newalive)
+    # print(len(alive))
 
-print(f"part2: {len(black)}")
+print(f"part2: {len(alive)}")
