@@ -7,7 +7,7 @@ inp = """18356117
 card_pub = int(inp[0])
 door_pub = int(inp[1])
 
-#start 1
+# start 1
 start = 1
 subject_no = 7
 loopsize = 0
@@ -32,6 +32,6 @@ while True:
 
 start = 1
 for i in range(loopsize):
-    start *= card_pub 
+    start *= card_pub
     start %= 20201227
 print(start)
