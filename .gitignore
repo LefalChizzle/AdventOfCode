@@ -1,2 +1,4 @@
 */.vscode
 *.dat
+*/__pycache__
+ *__pycache__

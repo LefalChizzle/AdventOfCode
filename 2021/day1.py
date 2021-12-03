@@ -13,8 +13,6 @@ with open("files/day1.txt") as file:
 # 260
 # 263"""
 
-# print(inp)
-
 help = [int(i) for i in inp.split()]
 
 
